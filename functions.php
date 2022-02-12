@@ -11,9 +11,12 @@ wp_enqueue_style('style_css',
 add_action("wp_enqueue_scripts", "cidw_4w4_enqueue");
 
 function cidw_4w4_enregistre_mon_menu() {
-    register_nav_menu( 'principal', __( 'Menu principal', 'cidw_4w4' ) );
+    register_nav_menus( array(
+         'principal'=> __( 'Menu principal', 'cidw_4w4' ),
+        'footer'=> __('menu secondaire', 'cidw_4w4' ))
+    );
 }
-
+//allo git
 
 function cidw_4w4_filtre_le_menu($mon_object) {
     foreach($mon_object as $cle => $valeur){
